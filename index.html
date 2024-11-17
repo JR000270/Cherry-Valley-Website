@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- HELLO -->
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css" />
@@ -8,44 +8,75 @@
     </head>
     <body>
         <!--Header-->
-        <section class = "header">
-            <div style = "background-color: rgba(17, 17, 17, 0.699)">
-            <nav>  
+        <div class = "changing-background">
+            <section class = "header">
+                <div style = "background-color: rgba(17, 17, 17, 0.699)">
+                <nav>  
+                <img src="/images/FOCV_Logo.png" class = "Page_Logo">
+                    <div class = "nav-title" id = "navTitle">
+                        <div class="text-box">
+                                <h1>Friends of Cherry Valley</h1>
+                        </div>
+                    </div>
+                <!---Making the links to the other parts of the web page-->
                 
-                <div class = "nav-title" id = "navTitle">
-                    <div class="text-box">
-                            <h1>Friends of Cherry Valley</h1>
+                    <div class = "nav-links" id = "navLinks">
+                        <ul>
+                            <li><a href = "index.html">HOME</a></li>
+                            <li><a href = "events.html">EVENTS</a></li>
+                            <li><a href = "gallery.html">GALLERY</a></li>
+                            <li><a href = "support.html">SUPPORT</a></li>
+                            <li><a href = "partners.html">PARTNERS</a></li>
+                            <li><a href = "about.html">ABOUT US</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                </div>
+                <!--Newsletter sign up google form-->
+                <div class = "signup-container">
+                    <par>
+                        <h2 class = "signup-text">Sign up for the newsletter!</h2><br> 
+                    </par>
+                    <div class = "btn_container">
+                        <button onclick="openSignUpPage()" class = "signUpButton">Sign Up</button>
                     </div>
                 </div>
-            <!---Making the links to the other parts of the web page-->
-            
-                <div class = "nav-links" id = "navLinks">
-                    <ul>
-                        <li><a href = "index.html">HOME</a></li>
-                        <li><a href = "events.html">EVENTS</a></li>
-                        <li><a href = "gallery.html">GALLERY</a></li>
-                        <li><a href = "support.html">SUPPORT</a></li>
-                        <li><a href = "partners.html">PARTNERS</a></li>
-                        <li><a href = "about.html">ABOUT US</a></li>
-                    </ul>
-                </div>
-            </nav>
-            </div>
-            
-        </section>
+            </section>
+    </div>
     <!---- Footer ---->
-        <section class="footer">
-            <h4>About Us</h4>
-            <p> Welcome to our new and improved website!</p>
-                    <pre>
-                Here you can find our upcoming events,
-                    
-                Browse our fun photos and memberships,
-                        
-                And plan your next getaway!				
-                    </pre>
-          By Jaden Randolph, Payton Butler, and David Verdejo
-            </p>
-        </section>
+    <section class="footer">
+        <h4>About Us</h4>
+        <p> Welcome to our new and improved website!</p>
+       
+        <pre>
+            Cherry Valley National Wildlife Refuge Headquarters 
+            2138 Croasdale Rd
+            Stroudsburg, PA 18360
+            Email: friendsofcherryvalley@gmail.com
+        </pre>
+         <!-- google maps -->
+         <div class="maps_container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.482819800798!2d-75.17451862487242!3d40.97090732172664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c489f1f668dceb%3A0xcdf75d8a3871d4c8!2sCherry%20Valley%20National%20Wildlife%20Refuge!5e0!3m2!1sen!2sus!4v1727645393727!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+            <div class = "social-links">
+                <ul>
+                    <li>
+                        <a href = "https://www.facebook.com/friendsofcherryvalley/?ref=embed_page" target="_blank">
+                            <img src ="images/Social_Media_FB_Icon.png", alt = "Facebook Page" class = "fb_icon"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "https://www.instagram.com/" target="_blank">
+                            <img src = "images/instagram_logo.png", alt = "Instagram Page" class = "ig_icon"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "https://www.tiktok.com/explore" target = "_blank">
+                            <img src = "images/tiktok_del.png" alt = "TikTok Page" class = "tiktok_icon">
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </section>
     </body>
 </html>
