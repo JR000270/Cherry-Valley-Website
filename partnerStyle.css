@@ -117,9 +117,10 @@ a {
 
 /* Navbar */
 
-.header{/*get background and header layed out*/
-    width: 100%;
-    position: relative;
+
+.Page_Logo{
+    height: 100px;
+    width: auto;
 }
 /*navs making top paging buttons nice and formatted*/
 nav{
@@ -131,6 +132,7 @@ nav{
 .nav-title{
     flex: 1;
     text-align: left;
+    font-size:x-large;
 }
 nav img{
     width: 150px;
@@ -151,7 +153,7 @@ nav img{
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 13px;
+    font-size: large;
 }
 
 .nav-links ul li::after{
@@ -166,7 +168,7 @@ nav img{
 
 .nav-links ul li:hover::after{
     width: 100%
-} 
+}
 
 
 
