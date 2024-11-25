@@ -89,6 +89,19 @@ nav img{
     right: 20px;
     padding-bottom: 10px;
 }
+.aboutus_maps_container{
+    width: 50%;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    float: right;
+    position: absolute;
+    top: 840px;
+    right: 20px;
+    padding-bottom: 10px;
+}
 iframe{
     width: 80%;
     height: 300px;
@@ -190,6 +203,14 @@ iframe{
     background-color: blanchedalmond;
 }
 
+.still-background{
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/trail4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .changing-background{
     height: 100vh;
     width: 100%;
