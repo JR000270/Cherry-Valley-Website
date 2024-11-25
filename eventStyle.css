@@ -1,0 +1,114 @@
+/* General reset */
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+
+.background {
+    background-image: url('https://www.woodloch.com/wp-content/uploads/2021/04/pocono-mountains-resorts-1200x803-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ensures the background stays fixed */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: relative; /* Ensures child elements like iframe can be positioned */
+}
+
+.container {
+    position: absolute; /* Position iframe independently */
+    top: 57%; 
+    left: 25%; 
+    transform: translate(-50%, -50%); /* Aligns the iframe properly */
+    height: 600px; /* Adjust to fit the iframe content */
+    width: 600px;
+    border: solid 1px #777;
+}
+
+.image {
+    position: absolute; /* Position iframe independently */
+    top: 57%; 
+    left: 75%;
+    transform: translate(-50%, -50%); /* Aligns the iframe properly */
+    height: 600px; /* Adjust to fit the iframe content */
+    width: 600px;
+    border: solid 1px #777;
+}
+
+.hero {
+    background: linear-gradient(rgba(81, 146, 186, 0.3), rgba(81, 146, 186, 0.3)), 
+                url('cherry_valley_bg2.png') center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.hero h1 {
+    text-align: center;
+    padding-top: 80px;
+    font-size: 40px;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+/* Navbar */
+
+.header{/*get background and header layed out*/
+    width: 100%;
+    position: relative;
+}
+/*navs making top paging buttons nice and formatted*/
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-title{
+    flex: 1;
+    text-align: left;
+}
+nav img{
+    width: 150px;
+
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #d6f354;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%
+} 
