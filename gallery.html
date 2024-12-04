@@ -1,17 +1,124 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <script src = "scratch.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title> Friends Of Cherry Valley</title>
+    <title>Cherry Valley Gallery Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Container for the entire gallery */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Header styles */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+            justify-items: center;
+        }
+
+        /* Image Styling */
+        .image-gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for images */
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Video Gallery */
+        .video-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        /* Video container */
+        .video-container iframe {
+            width: 560px;
+            height: 315px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Buttons Section */
+        .buttons-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            background-color: #007bff; /* Blue color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .video-container iframe {
+                width: 100%;
+                max-width: 100%;
+                height: 315px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!--Header-->
     <section class = "header">
         <div style = "background-color: rgba(17, 17, 17, 0.699)">
-        <nav>  
-            
+        <nav>   
             <div class = "nav-title" id = "navTitle">
                 <div class="text-box">
                         <h1>Friends of Cherry Valley</h1>
@@ -31,31 +138,43 @@
             </div>
         </nav>
         </div>
-    </div>
-    <div class = "Page-Label">
-        <h2>Gallery</h2>
-    </div>
-        </section>
 
-    <div style = "background-color: rgb(190, 99, 58)">
-        <table>
-            <tr>
-                <th>This is the "Gallery" page  </th>
-            </tr>
-            
-        </table>
+    <div class="gallery-container">
+        <h1>Gallery</h1>
+        
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="davids_media/CV1.jpeg" alt="Image 1">
+            <img src="davids_media/CV2.jpeg" alt="Image 2">
+            <img src="davids_media/CV3.jpeg" alt="Image 3">
+            <img src="davids_media/CV4.jpeg" alt="Image 4">
+            <img src="davids_media/CV5.jpeg" alt="Image 5">
+            <img src="davids_media/CV6.jpeg" alt="Image 6">
+            <img src="davids_media/CV7.jpeg" alt="Image 7">
+            <img src="davids_media/CV8.jpeg" alt="Image 8">
+            <img src="davids_media/CV9.jpeg" alt="Image 9">
+            <img src="davids_media/CV10.jpeg" alt="Image 10">
+            <img src="davids_media/CV11.jpeg" alt="Image 11">
+            <img src="davids_media/CV12.jpeg" alt="Image 12">
+        </div>
+
+        <!-- Video Gallery -->
+        <div class="video-gallery">
+            <div class="video-container">
+                <iframe width="560" height="315" src="davids_media/144934-785579128_small.mp4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="davids_media/istockphoto-2148882250-640_adpp_is.mp4" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="buttons-container">
+            <a href="https://forms.gle/aUdGnt2wXKtuqHVMA" class="button">Join Mailing List</a>
+            <a href="https://tiktok.com" class="button">TikTok</a>
+            <a href="https://instagram.com" class="button">Instagram</a>
+            <a href="https://facebook.com/CherryValleyRefuge/" class="button">Facebook</a>
+        </div>
     </div>
-    <!---- Footer ---->
-    <section class="footer">
-        <h4>About Us</h4>
-        <p> Welcome to our new and improved website!</p>
-                    <pre>
-                Here you can find our upcoming events,
-                    
-                Browse our fun photos and memberships,
-                        
-                And plan your next getaway!				
-                    </pre>
-          By Jaden Randolph, Payton Butler, and David Verdejo
-        </p>
-    </section>
+</body>
+</html>

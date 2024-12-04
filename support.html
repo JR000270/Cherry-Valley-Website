@@ -1,59 +1,494 @@
 <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href="style.css" />
-    <script src = "scratch.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
 
-    <title> Friends Of Cherry Valley</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <title>Donate to Friends of Cherry Valley</title>
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #fff;
+    }
+
+    /* Background Styling */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #3498db;
+      /* Solid blue color */
+      z-index: -1;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    /* Title and Paragraphs */
+    h1,
+    h2 {
+      margin: 0 0 20px;
+      font-family: 'Arial Black', sans-serif;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      line-height: 1.8;
+    }
+
+    /* Second text styling */
+    .second-text {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+
+    /* Donate Button */
+    .donate-btn {
+      background: #f4c542;
+      color: #333;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      margin-top: 30px;
+      /* Raised position for the donate button */
+
+
+    }
+
+    #membership-button {
+      background: #f4c542;
+      /* Same as Donate button */
+      color: #333;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      margin-top: 30px;
+      /* Slightly separated from Donate button */
+    }
+
+    #membership-button:hover {
+      transform: scale(1.05);
+      background: #edb322;
+      /* Same hover effect as Donate button */
+    }
+
+
+    .donate-btn:hover {
+      transform: scale(1.05);
+      background: #edb322;
+    }
+
+    /* Google Maps */
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    /* Modal Overlay */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+
+    .modal-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #88c899;
+    }
+
+    .modal-content label {
+      display: block;
+      font-size: 1rem;
+      margin: 10px 0 5px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .modal-content button {
+      background: #88c899;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .modal-content button:hover {
+      background: #75ae7d;
+    }
+
+    .modal-close {
+      text-align: right;
+    }
+
+    .modal-close button {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px;
+      font-size: 0.9rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* About Us Section */
+    .about-us {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background: #fff;
+      color: #333;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-us-left,
+    .about-us-right {
+      width: 48%;
+    }
+
+    .about-us h2 {
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+
+    .about-us p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-us a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about-us a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Media and Links in Right Section */
+    .about-us-right {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+    }
+
+    .about-us-right img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      /* Stack the buttons vertically */
+      align-items: center;
+      /* Center the buttons horizontally */
+      gap: 12px;
+      /* Space between buttons */
+      width: 100%;
+      /* Ensures the buttons take up the full width */
+    }
+
+
+    .about-us-right button {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .about-us-right button:hover {
+      background-color: #2980b9;
+    }
+  </style>
 </head>
+
 <body>
-    <!--Header-->
-    <section class = "header">
-        <div style = "background-color: rgba(17, 17, 17, 0.699)">
-        <nav>   
-            <div class = "nav-title" id = "navTitle">
-                <div class="text-box">
-                        <h1>Friends of Cherry Valley</h1>
-                </div>
+  <section class = "header">
+    <div style = "background-color: rgba(17, 17, 17, 0.699)">
+    <nav>   
+        <div class = "nav-title" id = "navTitle">
+            <div class="text-box">
+                    <h1>Friends of Cherry Valley</h1>
             </div>
-        <!---Making the links to the other parts of the web page-->
-        
-            <div class = "nav-links" id = "navLinks">
-                <ul>
-                    <li><a href = "index.html">HOME</a></li>
-                    <li><a href = "events.html">EVENTS</a></li>
-                    <li><a href = "gallery.html">GALLERY</a></li>
-                    <li><a href = "support.html">SUPPORT</a></li>
-                    <li><a href = "partners.html">PARTNERS</a></li>
-                    <li><a href = "about.html">ABOUT US</a></li>
-                </ul>
-            </div>
-        </nav>
         </div>
-        <div class = "Page-Label">
-            <h2>Support</h2>
-        </div>
-    </section>
-<!--Title of page-->
-<div style = "background-color: rgb(190, 99, 58)">
-    <table>
-        <tr>
-            <th>This is the "Support" page  </th>
-        </tr>
-        
-    </table>
+
+  <div class = "nav-links" id = "navLinks">
+    <ul>
+        <li><a href = "index.html">HOME</a></li>
+        <li><a href = "events.html">EVENTS</a></li>
+        <li><a href = "gallery.html">GALLERY</a></li>
+        <li><a href = "support.html">SUPPORT</a></li>
+        <li><a href = "partners.html">PARTNERS</a></li>
+        <li><a href = "about.html">ABOUT US</a></li>
+    </ul>
 </div>
-<!---- Footer ---->
-<section class="footer">
-    <h4>About Us</h4>
-    <p> Welcome to our new and improved website!</p>
-                    <pre>
-                Here you can find our upcoming events,
-                    
-                Browse our fun photos and memberships,
-                        
-                And plan your next getaway!				
-                    </pre>
-          By Jaden Randolph, Payton Butler, and David Verdejo
+</nav>
+</div>
+
+  <div class="container">
+    <h1>Donate to Friends of Cherry Valley</h1>
+    <p>
+      FOCV puts your donation dollars to work in meaningful ways. Individual one-time or recurring monthly donations of
+      any amount can be made via PayPal. Thank you for your support!
     </p>
-</section>
+
+    <p class="second-text">
+      If you prefer to mail in a donation, please make checks payable to:<br>
+      <strong>Friends of Cherry Valley National Wildlife Refuge</strong>,<br>
+      and mail to:<br>
+      2138 Croasdale Road, Stroudsburg PA 18360.
+    </p>
+
+    <button class="donate-btn" id="donate-button">Donate</button>
+    <button class="donate-btn" id="membership-button">View our Membership Plans!</button>
+  </div>
+
+
+
+ <!-- Membership Modal with Select Menu and Credit Card Inputs -->
+<div class="modal" id="membership-modal">
+  <div class="modal-content">
+    <div class="modal-close">
+      <button id="close-membership-modal">X</button>
+    </div>
+    <h3>Membership Plans</h3>
+    
+    <!-- Membership Plan Select Menu -->
+    <label for="membership-plans">Choose a Membership Plan:</label>
+    <select id="membership-plans">
+      <option value="15">Basic Membership - $15</option>
+      <option value="25">Donation and Membership - $25</option>
+      <option value="50">Donation and Membership - $50</option>
+      <option value="75">Donation and Membership - $75</option>
+      <option value="100">Donation and Membership - $100</option>
+    </select>
+
+    <!-- Credit Card Information -->
+    <div class="credit-card-info">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" placeholder="Enter card number" required>
+
+      <label for="expiration-date">Expiration Date:</label>
+      <input type="text" id="expiration-date" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" placeholder="Enter CVV" required>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Membership Modal Logic
+    const membershipModal = document.getElementById("membership-modal");
+    const membershipButton = document.getElementById("membership-button");
+    const closeMembershipModal = document.getElementById("close-membership-modal");
+
+    membershipButton.addEventListener("click", () => {
+      membershipModal.style.display = "flex";
+    });
+
+    closeMembershipModal.addEventListener("click", () => {
+      membershipModal.style.display = "none";
+    });
+  </script>
+
+  <!-- About Us Section -->
+  <div class="about-us">
+    <div class="about-us-left">
+      <h2>ABOUT US</h2>
+      <p>
+        Friends of Cherry Valley is a 501c3 non-profit organization formed by concerned residents of the Valley in 2002.
+        Our mission is to conserve and enhance the natural and cultural resources, rural character and scenic beauty of
+        the Cherry Valley area.
+      </p>
+      <p>
+        Visit our page on the National Wildlife Refuge System: <br>
+        <a href="https://www.fws.gov/refuge/cherry-valley" target="_blank">Cherry Valley National Wildlife Refuge | U.S.
+          Fish & Wildlife Service (fws.gov)</a>
+      </p>
+      <h3>CONTACT</h3>
+      <p>
+        E: <a href="mailto:friendsofcherryvalley@gmail.com">friendsofcherryvalley@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="about-us-right">
+      <h2>Follow Us</h2>
+
+      <!-- Add social media buttons -->
+      <div class="social-links">
+        <a href="https://www.facebook.com/CherryValleyRefuge/" target="_blank">
+          <button>Facebook</button>
+        </a>
+        <a href="https://www.instagram.com/yourpage" target="_blank">
+          <button>Instagram</button>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+          <button>TikTok</button>
+        </a>
+        <a href="https://forms.gle/aUdGnt2wXKtuqHVMA" target="_blank">
+          <button>Join Our Mailing List!</button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Modal for Donation Form -->
+  <div class="modal" id="donation-modal">
+    <div class="modal-content">
+      <div class="modal-close">
+        <button id="close-modal">X</button>
+      </div>
+      <h3>Make a Donation</h3>
+      <label for="donation-amount">Donation Amount ($):</label>
+      <input type="number" id="donation-amount" placeholder="Enter amount" required>
+
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" placeholder="Enter card number" required>
+
+      <button>Submit</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Copyright © 2024 Friends of Cherry Valley</p>
+  </footer>
+
+  <script>
+    // Initialize Google Map
+    function initMap() {
+      const cherryValley = { lat: 40.9750, lng: -75.1830 }; // Cherry Valley Coordinates
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: cherryValley
+      });
+      const marker = new google.maps.Marker({
+        position: cherryValley,
+        map: map,
+        title: "Friends of Cherry Valley"
+      });
+    }
+
+    // Modal Logic
+    const modal = document.getElementById("donation-modal");
+    const donateButton = document.getElementById("donate-button");
+    const closeModal = document.getElementById("close-modal");
+
+    donateButton.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    //Google Maps API Script
+    const script = document.createElement("script");
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyC1Ew4yAH6l5u_WG-oOgjq6RoJz65RUloc&callback=initMap";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  </script>
+
+
+
+
+
+  </script>
+
+
+  </script>
+</body>
+
+</html>
