@@ -4,8 +4,13 @@
 }
 
 .background {
+    height: 100vh;
+    width: 100%;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url('https://static.wixstatic.com/media/a25bf6_bc6bd9ea45144102817e0b45e576f04d~mv2.jpg/v1/fill/w_995,h_567,al_c,q_85,enc_auto/a25bf6_bc6bd9ea45144102817e0b45e576f04d~mv2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero {
