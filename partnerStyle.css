@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://static.wixstatic.com/media/a25bf6_bc6bd9ea45144102817e0b45e576f04d~mv2.jpg/v1/fill/w_995,h_567,al_c,q_85,enc_auto/a25bf6_bc6bd9ea45144102817e0b45e576f04d~mv2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero {
+    background: linear-gradient(rgba(81, 146, 186, 0.3), rgba(81, 146, 186, 0.3)), 
+                url('cherry_valley_bg2.png') center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.hero h1 {
+    text-align: center;
+    padding-top: 80px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.slide-row {
+    display: flex;
+    width: 19200px;
+    transition: 0.5s;
+}
+
+.slide-col {
+    width: 800px;
+    height: 400px;
+    position: relative;
+}
+
+.user-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+}
+
+.user-img img {
+    width: 100%; /* Make the image fill the container width */
+    height: 100%; /* Make the image fill the container height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 10px;
+}
+
+
+.user-text {
+    background: #2d3a59;
+    width: 350px;
+    height: 200px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    color: #d3d4d6;
+    padding: 45px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.user-text p {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+a {
+    color: white;            
+    text-decoration: none;   
+}
+
+
+.user-text h3 {
+    margin: 35px 0 5px;
+    color: #fff;
+}
+
+.partners {
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* Ensure the slide content stays within bounds */
+}
+
+.indicator {
+    position: absolute; /* Centering buttons below the slider */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+}
+
+.btn {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 4px;
+    border-radius: 15px;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.active {
+    width: 45px;
+}
+
+
+/* Navbar */
+
+
+.Page_Logo{
+    height: 100px;
+    width: auto;
+}
+/*navs making top paging buttons nice and formatted*/
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-title{
+    flex: 1;
+    text-align: left;
+    font-size:x-large;
+}
+nav img{
+    width: 150px;
+
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: large;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #d6f354;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%
+}
+
+
+
+
+
